@@ -85,16 +85,16 @@ section.demo.doublewidth, .spacer.doublewidth {
 	background-size:100% 100%;
 }
 .panel.blue {
-	background-image: linear-gradient(to right, rgba(0,183,235, 0.9) 0 100%), url("/assets/pics/board-3683740_1920.jpg");
+	background-image: linear-gradient(to right, rgba(0,183,235, 0.9) 0 100%), url("/talent/assets/pics/board-3683740_1920.jpg");
 }
 .panel.turqoise {
-    background-image: linear-gradient(to right, rgba(67,179,174, 0.9) 0 100%), url("/assets/pics/board-3683740_1920.jpg");
+    background-image: linear-gradient(to right, rgba(67,179,174, 0.9) 0 100%), url("/talent/assets/pics/board-3683740_1920.jpg");
 }
 .panel.green {
-	background-image: linear-gradient(to right, rgba(19,136,8, 0.9) 0 100%), url("/assets/pics/board-3683740_1920.jpg");
+	background-image: linear-gradient(to right, rgba(19,136,8, 0.9) 0 100%), url("/talent/assets/pics/board-3683740_1920.jpg");
 }
 .panel.bordeaux {
-	background-image: linear-gradient(to right, rgba(169,32,62, 0.9) 0 100%), url("/assets/pics/board-3683740_1920.jpg");
+	background-image: linear-gradient(to right, rgba(169,32,62, 0.9) 0 100%), url("/talent/assets/pics/board-3683740_1920.jpg");
 }
 
 .panel.map, .panel.stats {
