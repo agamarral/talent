@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Visualització de dades PAC3.">
+    <meta name="author" content="Amaya Gamarra">
+    <title>Talent</title>
+
+    <!-- font icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <!-- main styles -->
+	<link rel="stylesheet" href="src/css/talent.css">
+    <!--link rel="stylesheet" href="assets/vendors/ScrollMagic-2.0.8/assets/css/examples.css"-->
+    <!--Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3683740">Gerd Altmann</a> from <a href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=3683740">Pixabay</a>-->
+</head>
+<body>
+    <section class="demo" id="section-wipes">
+        <div id="pinContainer">
+            <section class="panel blue">
+                <div class="container-fluid head">
+                        <b class="roboto-regular versalita fadeinout1">
+                            Cada any uns 200.000 estudiants acaben el seu grau a l'estat espanyol.
+                        </b>
+                        <b class="roboto-regular versalita fadeinout2">
+                            Això representa gairebé un 1% de la població activa del país...
+                        </b>
+                        <b class="roboto-regular versalita fadein3">
+                            Però quina part d'aquest talent marxa a l'estranger?
+                        </b>
+                </div>
+            </section>
+            <section class="panel turqoise">
+                 <div id="trigg1"></div>
+                 <div class="container-fluid head">
+                    <b id="section2_1" class="roboto-regular versalita">
+                        El 2019 l'institut nacional d'estadística va enquestar <span class="fs-1">31651</span> joves que s'havien graduat en una 
+                        universitat espanyola el curs 2013/2014.
+                    </b>
+                    <b id="section2_2" class="roboto-regular versalita">
+                        Quina proporció dels enquestats treballaven a l'estranger?
+                    </b>
+                    <b id="section2_3" class="roboto-regular versalita">
+                        I a quins països van marxar a treballar?
+                    </b>
+                </div>
+            </section>
+            <section class="panel map">
+                <div class="container-fluid">
+                    <div class="row h-100">
+                        <div class="col-md-3 col mt-5 align-content-center">
+                            <div class = "row">
+                                <form >
+                                    <label for="countrySelect">Sabies quants dels enquestats viuen a:</label>
+                                    <select class="form-control" id="countrySelect">
+                                      <option disabled selected value> -- selecciona destí -- </option>
+                                      <option value="All">Totes les destinacions</option>
+                                      <option value="UK">Regne Unit</option>
+                                      <option value="GER">Alemanya</option>
+                                      <option value="FR">França</option>
+                                      <option value="UE">Altres estats UE</option>
+                                      <option value="EXT_UE">Europa no UE</option>
+                                      <option value="NDAM">Nordamèrica</option>
+                                      <option value="SDAM">Sudamèrica/Centreamèrica</option>
+                                      <option value="AS">Àsia</option>
+                                      <option value="AF">Àfrica</option>
+                                      <option value="OC">Oceania</option>                                                                        
+                                    </select>
+                              </form>
+                            </div>
+
+                            <div id="destinations" class="row mt-5"></div>
+                        </div>
+                        <div id="map-container" class="col-md-9 col d-flex align-content-center justify-content-center mt-5">
+                        </div>
+                    </div>
+                </div>
+            </section>               
+            <section class="panel green">
+                <div id="trigg2"></div>
+                <div class="container-fluid head">
+                    <b id="section3_1" class="roboto-regular versalita">
+                        Com són els graduats que van marxar?
+                    </b>
+                    <b id="section3_2" class="roboto-regular versalita">
+                        Són homes o dones? Quina edat tenen?
+                    </b>
+                    <b id="section3_3" class="roboto-regular versalita">
+                        Quins estudis han cursat?
+                    </b>
+                </div>              
+            </section>
+            <section class="panel stats">
+                <div class="container-fluid">
+                    <div class="row mt-5 mb-5">
+                        <div class="col-md-5 h-100">
+                            <div class="row">
+                                <div id="gender_chart">
+                                </div>
+                                <div class="h2">
+                                    Gènere dels graduats
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div id="age_chart">
+                                </div>
+                                <div class="h2">
+                                    Edats dels graduats
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 h-100">
+                            <div class="row">
+                                <div class="form-group d-flex align-content-center justify-content-center">
+                                    <label for="vizSelect">Mostrar distribució per:</label>
+                                    <select class="form-control w-50" id="vizSelect">
+                                      <option selected value="ambit">Àmbit d'estudis</option>
+                                      <option value="titulacio">Titulació</option>                                                                      
+                                    </select>
+                                </div>
+                                
+                            </div>
+                            <div class="row" id="ambit_cont">
+                                <div id="ambit_chart">
+                                </div>
+                            </div>
+                            <div class="row d-none" id="titu_cont">
+                                <div id="titu_chart">
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </section>            
+            <section class="panel bordeaux">
+                <div id="trigg3"></div> 
+                <div class="container-fluid head">
+                    <b id="section4_1" class="roboto-regular versalita">Estem invertint en talent que malgastem? Quants d'aquests estudiants han rebut ajuts públics per poder estudiar?</b>
+                </div>
+            </section>
+            <section class="panel grants">
+                <div class="container-fluid">
+                    <div class="row h-10">
+                        <h2>Un total de <span class="numHighlight fs-1">2847 graduats</span> dels <span class="numHighlight fs-1">5556</span> que han marxat van rebre algun tipus d'ajut públic per estudiar</h2>
+                    </div>
+                    <div class="row h-100 mt-5 d-flex justify-content-center">
+                        <div id="grants_chart">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </section>
+
+    <!--d3-->
+    <script src="https://d3js.org/d3.v6.js"></script>
+
+	<!-- core  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!--scrollmagic -->
+	<script type="text/javascript" src="assets/vendors/ScrollMagic-2.0.8/assets/js/lib/gsap3/gsap.min.js"></script>
+	<script type="text/javascript" src="assets/vendors/ScrollMagic-2.0.8/scrollmagic/uncompressed/ScrollMagic.js"></script>
+	<script type="text/javascript" src="assets/vendors/ScrollMagic-2.0.8/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+	<script type="text/javascript" src="assets/vendors/ScrollMagic-2.0.8/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>    
+
+    <!--talent sw-->
+    <script src="src/js/charts.js"></script>
+    <script src="src/js/map.js"></script>
+    <script src="src/js/talent.js"></script>
+
+
+</body>
+</html>
